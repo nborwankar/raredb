@@ -1,0 +1,5 @@
+Raredb is a database technology inspired by CouchDB.  
+The best parts of CouchDB are the REST interface and Replication.
+The immediate aim is to have *a* REST interface and *a* replication technology.
+Initially no compatibility with CouchDB is planned.  However this can be a goal for the future and is not ruled out.
+
