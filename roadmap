@@ -1,0 +1,44 @@
+Philosophy
+---------
+
+* REST and replication are aspects that should be part of ALL future web databases
+* REST is well understood
+* CouchDB style or similar replication needs to be an open protocol, documented and standardized
+* Master-Master replication is not new to the Internet, FTP, SMTP, NNTP, RDist are master-master replication protocols
+* They are relatively crude and dont have built in versioning. 
+* We need a more sophisticated master-master replication protocol
+
+Why this approach
+-----------------
+
+IMHO, the viral spread of CouchDB amongst potential users has been restricted by the false perception of the 
+need to know Erlang. It has also been restricted by the small number of developers who know Erlang.
+
+The internals of the database technology in the Raredb approach, are orthogonal to the interface definition.
+I.e. if you do REST in an interface-compliant way and you do replication in a protocol compliant way, then you are Rare-compliant.
+The interface and protocol spcifics TBD as part of this project but they will be based on lessons learned in CouchDB. .
+
+Interface - map CRUD to REST verbs in obvious ways a ls CouchDB
+Implementation - should be left to multiple developers, providing a reference implementation of REST interface and protocols.
+
+An initial very crude implementation, proof-of-concept, is being attempted as follows
+
+1) Replication done by git (this is not Couch-compliant, we know that), but the goals here are wider and possibly different)
+* note that initially we are only interested in replicating directory trees of files
+* if we focus on use cases we may see that interpersonal applications use "folder syncing" a lot.  we use git for this.
+* in future we may make this CouchDB replication compliant (note that git uses a tail append file like CouchDB, which may or may not be relevant)
+
+2) REST done by any number of different language based web servers/ web frameworks.
+
+
+Why use git?
+-----------
+
+* ubiquitous
+* multi-language bindngs
+* well understood among alpha-geeks
+* peer-peer replication
+* created by super-uber-geek
+* mature, battle tested over multiple versions
+* low level and high level primitives - can compose in many ways to create useful workflow pipelines
+* github, f'in github man!.
